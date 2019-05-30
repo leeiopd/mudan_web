@@ -1,0 +1,86 @@
+[
+	{
+		"model": "freetimes.freehour",
+		"pk": 1,
+		"fields": {
+			"clock": "9"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 2,
+		"fields": {
+			"clock": "10"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 3,
+		"fields": {
+			"clock": "11"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 4,
+		"fields": {
+			"clock": "12"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 5,
+		"fields": {
+			"clock": "13"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 6,
+		"fields": {
+			"clock": "14"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 7,
+		"fields": {
+			"clock": "15"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 8,
+		"fields": {
+			"clock": "16"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 9,
+		"fields": {
+			"clock": "17"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 10,
+		"fields": {
+			"clock": "18"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 11,
+		"fields": {
+			"clock": "19"
+		}
+  },
+	{
+		"model": "freetimes.freehour",
+		"pk": 12,
+		"fields": {
+			"clock": "20"
+		}
+  }
+]

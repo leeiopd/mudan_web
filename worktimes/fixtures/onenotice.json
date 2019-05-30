@@ -1,0 +1,9 @@
+[
+	{
+		"model": "notices.onenotice",
+		"pk": 1,
+		"fields": {
+			"content": "하이"
+		}
+    }
+]

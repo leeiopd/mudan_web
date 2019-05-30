@@ -1,0 +1,37 @@
+[
+	{
+		"model": "members.part",
+		"pk": 1,
+		"fields": {
+			"name": "V"
+		}
+  },
+	{
+		"model": "members.part",
+		"pk": 2,
+		"fields": {
+			"name": "G"
+		}
+  },
+	{
+		"model": "members.part",
+		"pk": 3,
+		"fields": {
+			"name": "B"
+		}
+  },
+	{
+		"model": "members.part",
+		"pk": 4,
+		"fields": {
+			"name": "D"
+		}
+  },
+	{
+		"model": "members.part",
+		"pk": 5,
+		"fields": {
+			"name": "K"
+		}
+  }
+]

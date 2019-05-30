@@ -1,0 +1,51 @@
+[
+	{
+		"model": "members.alive",
+		"pk": 1,
+		"fields": {
+			"content": "재학"
+		}
+	},
+	{
+		"model": "members.alive",
+		"pk": 2,
+		"fields": {
+			"content": "휴학"
+		}
+	},
+	{
+		"model": "members.alive",
+		"pk": 3,
+		"fields": {
+			"content": "군휴학"
+		}
+	},
+	{
+		"model": "members.alive",
+		"pk": 4,
+		"fields": {
+			"content": "학고"
+		}
+	},
+	{
+		"model": "members.alive",
+		"pk": 5,
+		"fields": {
+			"content": "자퇴"
+		}
+	},
+	{
+		"model": "members.alive",
+		"pk": 6,
+		"fields": {
+			"content": "졸업"
+		}
+	},
+	{
+		"model": "members.alive",
+		"pk": 7,
+		"fields": {
+			"content": "쉿..."
+		}
+	}
+]
