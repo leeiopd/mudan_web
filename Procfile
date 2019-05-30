@@ -1,0 +1,1 @@
+web: gunicorn mudan_web.wsgi
