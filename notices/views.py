@@ -7,7 +7,6 @@ def list(request):
     notices = Notice.objects.all().order_by('-pk')
     onenotice = get_object_or_404(Onenotice, pk=1)
     context = {'notices':notices, 'onenotice':onenotice}
-
     return render(request, 'notices/list.html', context)
 
 def create(request):

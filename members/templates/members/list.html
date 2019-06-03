@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <form method="POST">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+        <select class="custom-select" name="mudanno" value="기수">
+            <option value="all">기수</option>
+            <option value="all">all</option>
+            {% for mudanno in mudannos reversed %}
+            <option value="{{ mudanno.pk }}">{{ mudanno.num }} 기</option>
+            {% endfor %}
+        </select>
+        <select class="custom-select" name="part" value="파트">
+            <option value="all">파트</option>
+            <option value="all">all</option>
+            {% for part in parts %}
+            <option value="{{ part.pk }}">{{ part.name }}</option>
+            {% endfor %}
+        </select>
+        <select class="custom-select" name="alive" vlaue="활동">
+            <option value="all">활동</option>
+            <option value="all">all</option>
+            {% for alive in alives %}
+            <option value="{{ alive.pk }}">{{ alive.content }}</option>
+            {% endfor %}
+        </select>
+        <div class="input-group-append">
+        <input type="submit" role="btn" class="btn btn-outline-secondary" value="검색">
+        </div>
+        </div>
+    </form>
+
+
+
+
+    <table class="table table-hover table-bordered text-center mt-2">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" colspan="4">Members</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+            <td>{{ member.mudanNo }} 기</td>
+            <td>{{ member.part }}</td>
+            <td><a href="{% url 'members:detail' member.pk %}">{{ member.name }}</a></td>
+            <td>{{ member.alive }}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

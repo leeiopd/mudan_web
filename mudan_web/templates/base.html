@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
         body {
-          font-family: 'Sunflower', 'Open Sans', 'Noto Sans TC', 'Noto Sans JP', sans-serif;   
+          font-family: 'Sunflower', 'Open Sans', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+          white-space: normal;   
         }
     </style>
 </head>
@@ -22,20 +23,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Features</a>
-                <a class="nav-item nav-link" href="#">Pricing</a>
+                <a class="nav-item nav-link {% if app_name == 'notices' %}active{% endif %}" href="{% url 'notices:list' %}">공지 & 회의록</a>
+                <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="#">합주 시간표</a>
+                <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="#">공강 시간표</a>
+                <a class="nav-item nav-link {% if request.path == '/members/'%}active{% endif %}" href="{% url 'members:list' %}">Member</a>
+                <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="#">공연 영상</a>
             </div>
         </div>
     </nav>
     <div class="container">
-        <div class="alert alert-dark" role="alert">
+        <div class="alert alert-dark text-center" role="alert">
             {{ onenotice.content }}
         </div>
     </div>
     {% block body %}
     {% endblock %}
-
+    <div class="mb-5 pb-5"></div>
     <div class="fixed-bottom">
         <nav class="navbar navbar-dark bg-dark">
             <div class="container">

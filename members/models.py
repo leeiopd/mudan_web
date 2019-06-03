@@ -4,7 +4,8 @@ from django.db import models
 
 
 class Part(models.Model):
-    name = models.CharField(max_length=5)
+    name = models.CharField(max_length=10)
+    short = models.CharField(max_length=5)
 
     def __str__(self):
         return f'{self.name}'
@@ -25,7 +26,7 @@ class UniveNo(models.Model):
 
 
 class Major(models.Model):
-    title = models.CharField(max_length=10)
+    title = models.CharField(max_length=20)
 
     def __str__(self):
         return f'{self.title}'
@@ -47,5 +48,5 @@ class Member(models.Model):
     alive = models.ForeignKey(Alive, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.MudanNo}_{self.part}_{self.name}'
+        return f'{self.mudanNo}_{self.part}_{self.name}'
 

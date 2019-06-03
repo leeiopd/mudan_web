@@ -3,35 +3,40 @@
 		"model": "members.part",
 		"pk": 1,
 		"fields": {
-			"name": "V"
+			"name": "Vocal",
+			"short": "V"
 		}
   },
 	{
 		"model": "members.part",
 		"pk": 2,
 		"fields": {
-			"name": "G"
+			"name" : "Guitar",
+			"short": "G"
 		}
   },
 	{
 		"model": "members.part",
 		"pk": 3,
 		"fields": {
-			"name": "B"
+			"name" :"Bass",
+			"short": "B"
 		}
   },
 	{
 		"model": "members.part",
 		"pk": 4,
 		"fields": {
-			"name": "D"
+			"name": "Drum",
+			"short": "D"
 		}
   },
 	{
 		"model": "members.part",
 		"pk": 5,
 		"fields": {
-			"name": "K"
+			"name": "Keyboard",
+			"short": "K"
 		}
   }
 ]

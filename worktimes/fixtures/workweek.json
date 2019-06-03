@@ -1,0 +1,51 @@
+[
+	{
+		"model": "worktimes.workweek",
+		"pk": 1,
+		"fields": {
+			"day": "월"
+		}
+  },
+	{
+		"model": "worktimes.workweek",
+		"pk": 2,
+		"fields": {
+			"day": "화"
+		}
+  },
+	{
+		"model": "worktimes.workweek",
+		"pk": 3,
+		"fields": {
+			"day": "수"
+		}
+  },
+	{
+		"model": "worktimes.workweek",
+		"pk": 4,
+		"fields": {
+			"day": "목"
+		}
+  },
+	{
+		"model": "worktimes.workweek",
+		"pk": 5,
+		"fields": {
+			"day": "금"
+		}
+  },
+	{
+		"model": "worktimes.workweek",
+		"pk": 6,
+		"fields": {
+			"day": "토"
+		}
+  },
+	{
+		"model": "worktimes.workweek",
+		"pk": 7,
+		"fields": {
+			"day": "일"
+		}
+  }
+]

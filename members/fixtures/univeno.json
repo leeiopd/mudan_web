@@ -1,69 +1,69 @@
 [
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 1,
 		"fields": {
 			"num": 10
 		}
 	},
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 2,
 		"fields": {
 			"num": 11
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 3,
 		"fields": {
 			"num": 12
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 4,
 		"fields": {
 			"num": 13
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 5,
 		"fields": {
 			"num": 14
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 6,
 		"fields": {
 			"num": 15
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 7,
 		"fields": {
 			"num": 16
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 8,
 		"fields": {
 			"num": 17
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 9,
 		"fields": {
 			"num": 18
 		}
   },
 	{
-		"model": "members.univno",
+		"model": "members.univeno",
 		"pk": 10,
 		"fields": {
 			"num": 19
