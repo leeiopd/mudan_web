@@ -14,27 +14,11 @@
             </tr>
             <tr>
                 <th scope="row">Member</th>
-                <td>{% for member in team.team_members.all %} <a href="{% url 'members:detail' member.pk %}">{{ member.mudnaNo }} {{ member.part.name }} {{ member.name }}</a>{% endfor %}</td>
+                <td>{% for member in members %}<a href="{% url 'members:detail' member.pk %}">{{ member.mudanNo.num }}_{{ member.part.short }}_{{ member.name }}</a><br>{% endfor %}</td>
             </tr>
             <tr>
-                <th scope="row">파트</th>
-                <td>{{ member.part.name }}</td>
-            </tr>
-            <tr>
-                <th scope="row">학번</th>
-                <td>{{ member.univNo.num }} 학번</td>
-            </tr>
-            <tr>
-                <th scope="row">전공</th>
-                <td>{{ member.major.title }}</td>
-            </tr>
-            <tr>
-                <th scope="row">활동</th>
-                <td>{{ member.alive.content }}</td>
-            </tr>
-            <tr>
-                <th scope="row">Team</th>
-                <td>{% for team in member.member_videoteam.all %}<a href="">{{team.name}}</a><br>{% endfor %}</td>
+                <th scope="row">Video List</th>
+                <td>{% for video in videos %}<a href="{% url 'videos:watch' video.pk %}">{{video.year}}_{{video.concert}} : {{video.song_title}} - {{ video.song_band }}</a><br><br>{% endfor %}</td>
             </tr>
 
         </tbody>

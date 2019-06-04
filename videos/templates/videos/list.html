@@ -18,6 +18,13 @@
             <option value="{{ concert.pk }}">{{ concert.name }}</option>
             {% endfor %}
         </select>
+        <select class="custom-select" name="search_team" value="팀">
+            <option value="all">팀</option>
+            <option value="all">all</option>
+            {% for team in teams %}
+            <option value="{{ team.pk }}">{{ team.name }}</option>
+            {% endfor %}
+        </select>
         <div class="input-group-append">
         <input type="submit" role="btn" class="btn btn-outline-secondary" value="검색">
         </div>
@@ -40,7 +47,7 @@
             <td class="px-1">{{ video.year.name }}</td>
             <td class="px-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ video.concert.name }}</td>
             <td class="px-1" style="word-break:break-all" ><a href="{% url 'videos:watch' video.pk %}">{{ video.song_title }}</a></td>
-            <td class="px-1"><a href="">{{ video.team.name }}</a></td>
+            <td class="px-1"><a href="{% url 'videos:detail' video.team.pk %}">{{ video.team.name }}</a></td>
             </tr>
             {% endfor %}
             {% else %}
