@@ -14,19 +14,19 @@ def list(request):
         if search_mudanno == 'all' and search_part == 'all' and search_alive == 'all':
             members = Member.objects.all().order_by('-mudanNo')
         if search_mudanno != 'all' and search_part != 'all' and search_alive != 'all':
-            members = Member.objects.filter(mudanNo = search_mudanno, alive = search_alive, part = search_part).order_by('-mudanNo')
+            members = Member.objects.filter(mudanNo_id = search_mudanno, alive_id = search_alive, part = search_part).order_by('-mudanNo')
         if search_mudanno == 'all' and search_part == 'all' and search_alive != 'all':
-            members =  Member.objects.filter(alive = search_alive).order_by('-mudanNo')
+            members =  Member.objects.filter(alive_id = search_alive).order_by('-mudanNo')
         if search_mudanno == 'all' and search_part != 'all' and search_alive == 'all':
-            members = Member.objects.filter(part = search_part).order_by('-mudanNo')
+            members = Member.objects.filter(part_id = search_part).order_by('-mudanNo')
         if search_mudanno != 'all' and search_part == 'all' and search_alive == 'all':
-            members = Member.objects.filter(MudanNo = search_mudanno).order_by('-mudanNo')
+            members = Member.objects.filter(mudanNo_id = search_mudanno).order_by('-mudanNo')
         if search_mudanno == 'all' and search_part != 'all' and search_alive != 'all':
-            members =  Member.objects.filter(alive = search_alive, part = search_part).order_by('-mudanNo')
+            members =  Member.objects.filter(alive_id = search_alive, part_id = search_part).order_by('-mudanNo')
         if search_mudanno != 'all' and search_part == 'all' and search_alive != 'all':
-            members =  Member.objects.filter(alive = search_alive, MudanNo = search_mudanno).order_by('-mudanNo')
+            members =  Member.objects.filter(alive_id = search_alive, mudanNo_id = search_mudanno).order_by('-mudanNo')
         if search_mudanno != 'all' and search_part != 'all' and search_alive == 'all':
-            members =  Member.objects.filter(MudanNo = search_mudanno, part = search_part).order_by('-mudanNo')
+            members =  Member.objects.filter(mudanNo_id = search_mudanno, part_id = search_part).order_by('-mudanNo')
     else:
         members = Member.objects.all().order_by('-mudanNo')
     context = {'members':members, 'onenotice':onenotice, 'mudannos':mudannos, 'parts':parts, 'alives':alives}
