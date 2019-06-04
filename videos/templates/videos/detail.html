@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <th scope="row">Video List</th>
-                <td>{% for video in videos %}<a href="{% url 'videos:watch' video.pk %}">{{video.year}}_{{video.concert}} : {{video.song_title}} - {{ video.song_band }}</a><br><br>{% endfor %}</td>
+                <td>{% for video in videos %}<a href="{% url 'videos:watch' video.pk %}">{{video.year}}_{{video.concert}} : {{video.song_title}} - {{ video.song_band }}</a>{% if forloop.last %}{% else %}<br><br>{% endif %}{% endfor %}</td>
             </tr>
 
         </tbody>
