@@ -18,12 +18,12 @@
             <tr>
                 <td></td>
                 {% for freeweek in freeweeks %}
-                <td>{{ freeweek.day }}</td>
+                <th>{{ freeweek.day }}</td>
                 {% endfor %}
             </tr>
             {% for freehour in freehours %}
             <tr>
-            <th scope="row">{{ freehour.clock }}</th>
+            <th><div>{{ freehour.clock }}</div></th>
             <td>
                 <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#monday_{{ freehour.clock }}">
                         <i class="far fa-calendar-check"></i>
