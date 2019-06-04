@@ -4,4 +4,5 @@ from . import views
 app_name = 'freetimes'
 
 urlpatterns = [
+    path('', views.list, name='list'),
 ]
