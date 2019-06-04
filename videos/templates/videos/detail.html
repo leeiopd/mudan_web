@@ -10,11 +10,11 @@
         <tbody>
             <tr>
                 <th scope="row">name</th>
-                <td>{{ member.name }}</td>
+                <td>{{ team.name }}</td>
             </tr>
             <tr>
-                <th scope="row">기수</th>
-                <td>{{ member.mudanNo.num }} 기</td>
+                <th scope="row">Member</th>
+                <td>{% for member in team.team_members.all %} <a href="{% url 'members:detail' member.pk %}">{{ member.mudnaNo }} {{ member.part.name }} {{ member.name }}</a>{% endfor %}</td>
             </tr>
             <tr>
                 <th scope="row">파트</th>

@@ -37,10 +37,10 @@
             {% if videos %}
             {% for video in videos %}
             <tr>
-            <td>{{ video.year.name }} 년</td>
-            <td>{{ video.concert.name }}</td>
-            <td><a href="">{{ video.song_title }}</a></td>
-            <td>{{ video.video_team.name }}</th>
+            <td class="px-1">{{ video.year.name }}</td>
+            <td class="px-1" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ video.concert.name }}</td>
+            <td class="px-1" style="word-break:break-all" ><a href="{% url 'videos:watch' video.pk %}">{{ video.song_title }}</a></td>
+            <td class="px-1"><a href="">{{ video.team.name }}</a></td>
             </tr>
             {% endfor %}
             {% else %}

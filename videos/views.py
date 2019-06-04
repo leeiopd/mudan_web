@@ -26,9 +26,9 @@ def list(request):
     context = {'onenotice': onenotice, 'videos':videos, 'years':years, 'concerts':concerts}
     return render(request, 'videos/list.html', context)
 
-def watch(request, videos_pk):
+def watch(request, video_pk):
     onenotice  = get_object_or_404(Onenotice, pk=1)
-    video = get_object_or_404(Video, pk=videos_pk)
+    video = get_object_or_404(Video, pk=video_pk)
 
     context = {'onenotice': onenotice, 'video':video}
     return render(request, 'videos/watch.html', context)
