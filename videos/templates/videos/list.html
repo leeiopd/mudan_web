@@ -2,19 +2,20 @@
 {% block body %}
 <div class="container">
     <form method="POST">
+            {% csrf_token %}
             <div class="input-group mb-3">
         <select class="custom-select" name="search_year" value="년도">
             <option value="all">년도</option>
             <option value="all">all</option>
             {% for year in years reversed %}
-            <option value="{{ year.name }}">{{ year.name }} 년</option>
+            <option value="{{ year.pk }}">{{ year.name }} 년</option>
             {% endfor %}
         </select>
         <select class="custom-select" name="search_concert" value="공연">
             <option value="all">공연</option>
             <option value="all">all</option>
             {% for concert in concerts %}
-            <option value="{{ concert.name }}">{{ concert.name }}</option>
+            <option value="{{ concert.pk }}">{{ concert.name }}</option>
             {% endfor %}
         </select>
         <div class="input-group-append">
@@ -46,6 +47,7 @@
             <tr>
                 <td colspan="4" class="text-center">검색 결과가 없습니다.</td>
             </tr>
+            {% endif %}
         </tbody>
     </table>
 </div>

@@ -27,7 +27,7 @@
                 <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="#">합주 시간표</a>
                 <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="#">공강 시간표</a>
                 <a class="nav-item nav-link {% if request.path == '/members/'%}active{% endif %}" href="{% url 'members:list' %}">Member</a>
-                <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="#">공연 영상</a>
+                <a class="nav-item nav-link {% if request.path == '/videos/'%}active{% endif %}" href="{% url 'videos:list' %}">공연 영상</a>
             </div>
         </div>
     </nav>
