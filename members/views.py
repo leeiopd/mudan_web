@@ -11,15 +11,22 @@ def list(request):
         search_mudanno = request.POST.get('mudanno')
         search_part = request.POST.get('part')
         search_alive = request.POST.get('alive')
-        if serch_mudanno != 'all':
-            members = Member.objects.filter(mudanNo.pk = search_mudanno)
-        else:
-            members = Member.ojbects.all()
-        if serch_part != 'all':
-            members = members.objects.filter(part.pk = search_part)
-        if serch_alive != 'all':
-            members = members.ojbects.filter(alive.pk = search_alive)
-
+        if search_mudanno == 'all' and search_part == 'all' and search_alive == 'all':
+            members = Member.objects.all().order_by('-mudanNo')
+        if search_mudanno != 'all' and search_part != 'all' and search_alive != 'all':
+            members = Member.objects.filter(mudanNo = search_mudanno, alive = search_alive, part = search_part).order_by('-mudanNo')
+        if search_mudanno == 'all' and search_part == 'all' and search_alive != 'all':
+            members =  Member.objects.filter(alive = search_alive).order_by('-mudanNo')
+        if search_mudanno == 'all' and search_part != 'all' and search_alive == 'all':
+            members = Member.objects.filter(part = search_part).order_by('-mudanNo')
+        if search_mudanno != 'all' and search_part == 'all' and search_alive == 'all':
+            members = Member.objects.filter(MudanNo = search_mudanno).order_by('-mudanNo')
+        if search_mudanno == 'all' and search_part != 'all' and search_alive != 'all':
+            members =  Member.objects.filter(alive = search_alive, part = search_part).order_by('-mudanNo')
+        if search_mudanno != 'all' and search_part == 'all' and search_alive != 'all':
+            members =  Member.objects.filter(alive = search_alive, MudanNo = search_mudanno).order_by('-mudanNo')
+        if search_mudanno != 'all' and search_part != 'all' and search_alive == 'all':
+            members =  Member.objects.filter(MudanNo = search_mudanno, part = search_part).order_by('-mudanNo')
     else:
         members = Member.objects.all().order_by('-mudanNo')
     context = {'members':members, 'onenotice':onenotice, 'mudannos':mudannos, 'parts':parts, 'alives':alives}
