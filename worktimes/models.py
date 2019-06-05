@@ -24,7 +24,7 @@ class Color(models.Model):
 
 
 class Nowteam(models.Model):
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
     short_name = models.CharField(max_length=1)
     members = models.ManyToManyField(Member, related_name='member_nowteam', blank=True)
     color = models.ForeignKey(Color, on_delete=models.CASCADE)
@@ -33,7 +33,7 @@ class Nowteam(models.Model):
         return f'{self.name}'
 
 class Nowsong(models.Model):
-    title = models.CharField(max_length=10)
+    title = models.CharField(max_length=30)
     band = models.CharField(max_length=10)
     team = models.ForeignKey(Nowteam, on_delete=models.CASCADE)
 
