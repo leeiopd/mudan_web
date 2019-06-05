@@ -165,6 +165,10 @@
                     <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                         {% else %}
                         {% endif %}
@@ -210,6 +214,10 @@
                     <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                 {% else %}
                         {% endif %}
@@ -257,6 +265,10 @@
                     <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                 {% else %}
                         {% endif %}
@@ -303,6 +315,10 @@
                     <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                 {% else %}
                         {% endif %}
@@ -349,6 +365,10 @@
                     <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                 {% else %}
                         {% endif %}
@@ -395,6 +415,10 @@
                     <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                     {% else %}
                         {% endif %}
@@ -440,6 +464,10 @@
                     <span style="font-weight:bold">선곡</span>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
+                    {% if forloop.last %}
+                    {% else %}
+                    <br>
+                    {% endif %}
                     {% endfor %}
                 {% else %}
                         {% endif %}
