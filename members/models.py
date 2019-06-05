@@ -26,7 +26,7 @@ class UniveNo(models.Model):
 
 
 class Major(models.Model):
-    title = models.TextField
+    title = models.TextField()
 
     def __str__(self):
         return f'{self.title}'
