@@ -462,6 +462,7 @@
                     <br>
                     <hr>
                     <span style="font-weight:bold">선곡</span>
+                    <br>
                     {% for nowsong in table.nowteam.nowsong_set.all %}
                     {{ nowsong.title }} - {{ nowsong.band }}
                     {% if forloop.last %}
