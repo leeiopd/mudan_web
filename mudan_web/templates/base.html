@@ -26,9 +26,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                <a class="nav-item nav-link {% if app_name == 'notices' %}active{% endif %}" href="{% url 'notices:list' %}">공지 & 회의록</a>
-                <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="{% url 'worktimes:list' %}">합주 시간표</a>
-                <a class="nav-item nav-link {% if request.path == '/notices/'%}active{% endif %}" href="{% url 'freetimes:list' %}">공강 시간표</a>
+                <a class="nav-item nav-link {% if request.path == '/notices/' %}active{% endif %}" href="{% url 'notices:list' %}">공지 & 회의록</a>
+                <a class="nav-item nav-link {% if request.path == '/worktimes/'%}active{% endif %}" href="{% url 'worktimes:list' %}">합주 시간표</a>
+                <a class="nav-item nav-link {% if request.path == '/freetimes/'%}active{% endif %}" href="{% url 'freetimes:list' %}">공강 시간표</a>
                 <a class="nav-item nav-link {% if request.path == '/members/'%}active{% endif %}" href="{% url 'members:list' %}">Member</a>
                 <a class="nav-item nav-link {% if request.path == '/videos/'%}active{% endif %}" href="{% url 'videos:list' %}">공연 영상</a>
             </div>

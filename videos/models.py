@@ -26,7 +26,7 @@ class Team(models.Model):
 
 
 class Video(models.Model):
-    song_title = models.CharField(max_length=30)
+    song_title = models.TextField()
     song_band = models.CharField(max_length=10)
     concert = models.ForeignKey(Concert, on_delete=models.CASCADE)
     year = models.ForeignKey(Year, on_delete=models.CASCADE)

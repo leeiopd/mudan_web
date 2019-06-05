@@ -4,14 +4,6 @@ from .models import Workweek, Workhour, Nowsong, Nowteam, Table
 # Register your models here.
 
 
-class WorkweekAdmin(admin.ModelAdmin):
-    list_display = ('day',)
-
-
-class WorkhourAdmin(admin.ModelAdmin):
-    list_display = ('clock',)
-
-
 class NowsongAdmin(admin.ModelAdmin):
     list_display = ('title', 'band',)
 
@@ -23,8 +15,6 @@ class TableAdmin(admin.ModelAdmin):
     list_display = ('nowteam', 'week', 'hour',)
 
 
-admin.site.register(Workweek, WorkweekAdmin)
-admin.site.register(Workhour, WorkhourAdmin)
 admin.site.register(Nowsong, NowsongAdmin)
 admin.site.register(Nowteam, NowteamAdmin)
 admin.site.register(Table, TableAdmin)

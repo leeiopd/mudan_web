@@ -49,7 +49,7 @@
             {% if notices %}
             {% for notice in notices %}
             <tr>
-            <th scope="row">{% if forloop.counter == forloop.first %}new{% else %}{{ forloop.counter }}{% endif %}</th>
+            <th scope="row">{% if forloop.counter == forloop.first %}new{% else %}{{ forloop.revcounter }}{% endif %}</th>
             <td><a href="{% url 'notices:detail' notice.pk %}">{{ notice.title }}</a></td>
             </tr>
             {% endfor %}

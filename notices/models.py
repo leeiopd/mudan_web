@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Onenotice(models.Model):
-    content = models.CharField(max_length=20)
+    content = models.TextField()
 
 
 class Notice(models.Model):
