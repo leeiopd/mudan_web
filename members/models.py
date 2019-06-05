@@ -50,3 +50,6 @@ class Member(models.Model):
     def __str__(self):
         return f'{self.mudanNo}_{self.part}_{self.name}'
 
+    class Meta:
+        ordering = ['part_id']
+
