@@ -1,0 +1,476 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <table class="table table-bordered text-center table-hover table-sm">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col" colspan="8">합주 시간표</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                {% for workweek in workweeks %}
+                <th>{{ workweek.day }}</td>
+                {% endfor %}
+            </tr>
+            {% for workhour in workhours %}
+            <tr>
+            <th><div>{{ workhour.clock }}</div></th>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Monday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">
+        {% for table in tables %}
+        {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Tuesday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">
+        {% for table in tables %}
+        {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Wednesday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">{% for table in tables %}
+        {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Thursday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">
+        {% for table in tables %}
+        {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Friday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">
+        {% for table in tables %}
+        {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Saturday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">
+        {% for table in tables %}
+        {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            <td class="px-0">
+                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Sunday_{{ workhour.clock }}"
+                style="background-color:{% for table in tables %}
+                {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
+                {% if table.nowteam %}
+                {{ table.nowteam.color.name }}
+            {% endif %}{% endif %}
+        {% endfor %}; height:2rem;">
+        {% for table in tables %}
+        {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
+        {% if table.nowteam %}
+        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+    {% endif %}{% endif %}
+{% endfor %}
+                </button>
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<!-- Modal -->
+{% for workhour in workhours %}
+<div class="modal fade" id="Monday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Monday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                {% endif %}{% endif %}
+            {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span><br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    <br>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                        {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for workhour in workhours %}
+<div class="modal fade" id="Tuesday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Tuesday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+            {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span><br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    <br>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for workhour in workhours %}
+<div class="modal fade" id="Wednesday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Wednesday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                    {% endif %}
+                {% else %}
+                비어 있습니다.
+                {% endif %}
+                {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span>
+                    <br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    <br>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for workhour in workhours %}
+<div class="modal fade" id="Thursday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Thursday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+                {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span>
+                    <br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    <br>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for workhour in workhours %}
+<div class="modal fade" id="Friday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Friday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+                {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span>
+                    <br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    <br>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for workhour in workhours %}
+<div class="modal fade" id="Saturday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Saturday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+                {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span>
+                    <br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    <br>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                    {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% for workhour in workhours %}
+<div class="modal fade" id="Sunday_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="Sunday_{{ workhour.clock }}Title">{% for table in tables %}
+                    {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">{{ table.nowteam.name }}</span>
+                    {% endif %}
+                {% else %}
+                {% endif %}
+            {% endfor %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% for table in tables %}
+                    {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
+                    {% if table.nowteam %}
+                    <span style="font-weight:bold">멤버</span>
+                    <br>
+                    {% for member in table.nowteam.members.all %}
+                        {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                    {% endfor %}
+                    <br>
+                    <hr>
+                    <span style="font-weight:bold">선곡</span>
+                    {% for nowsong in table.nowteam.nowsong_set.all %}
+                    {{ nowsong.title }} - {{ nowsong.band }}
+                    {% endfor %}
+                {% else %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+<div class="modal fade" id="empty" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="empty">합주 시간표가 비어 있습니다.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                합주 시간을 예약 하셨다면 관리자에게 문의 하시기 바랍니다.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

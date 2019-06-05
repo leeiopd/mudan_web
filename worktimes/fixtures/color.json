@@ -1,0 +1,107 @@
+[
+    {
+        "model": "worktimes.color",
+        "pk": 1,
+        "fields": {
+            "name": "lightcoral"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 2,
+        "fields": {
+            "name": "coral"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 3,
+        "fields": {
+            "name": "tomato"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 4,
+        "fields": {
+            "name": "orange"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 5,
+        "fields": {
+            "name": "darkorange"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 6,
+        "fields": {
+            "name": "gold"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 7,
+        "fields": {
+            "name": "lawngreen"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 8,
+        "fields": {
+            "name": "yellowgreen"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 9,
+        "fields": {
+            "name": "mediumseagreen"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 10,
+        "fields": {
+            "name": "mediumspringgreen"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 11,
+        "fields": {
+            "name": "aquamarine"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 12,
+        "fields": {
+            "name": "lightskyblue"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 13,
+        "fields": {
+            "name": "deepskyblue"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 14,
+        "fields": {
+            "name": "violet"
+        }
+    },
+    {
+        "model": "worktimes.color",
+        "pk": 15,
+        "fields": {
+            "name": "lightpink"
+        }
+    }
+]
