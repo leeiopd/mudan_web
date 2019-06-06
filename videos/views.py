@@ -48,7 +48,7 @@ def watch(request, video_pk):
 def detail(request, team_pk):
     onenotice  = get_object_or_404(Onenotice, pk=1)
     team = get_object_or_404(Team, pk=team_pk)
-    members = team.team_members.all().order_by('-part_id')
+    members = team.team_members.all()
     videos = team.video_set.all().order_by('-year')
 
     context = {'onenotice': onenotice, 'team':team, 'videos':videos, 'members':members}
