@@ -18,7 +18,7 @@ class Concert(models.Model):
         return f'{self.name}'
 
 class Team(models.Model):
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
     team_members = models.ManyToManyField(Member, related_name='member_videoteam', blank=True)
 
     def __str__(self):
@@ -27,7 +27,7 @@ class Team(models.Model):
 
 class Video(models.Model):
     song_title = models.TextField()
-    song_band = models.CharField(max_length=10)
+    song_band = models.CharField(max_length=30)
     concert = models.ForeignKey(Concert, on_delete=models.CASCADE)
     year = models.ForeignKey(Year, on_delete=models.CASCADE)
     url = models.TextField()

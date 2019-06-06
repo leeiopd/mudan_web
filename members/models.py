@@ -51,5 +51,5 @@ class Member(models.Model):
         return f'{self.mudanNo}_{self.part}_{self.name}'
 
     class Meta:
-        ordering = ['part_id']
+        ordering = ['mudanNo', 'part_id']
 
