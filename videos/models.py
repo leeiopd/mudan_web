@@ -36,6 +36,9 @@ class Video(models.Model):
     def __str__(self):
         return f'{self.song_title}'
 
+    class Meta:
+        ordering = ['-year_id', 'concert_id']
+
 
 
 
