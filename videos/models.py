@@ -37,7 +37,7 @@ class Video(models.Model):
         return f'{self.song_title}'
 
     class Meta:
-        ordering = ['-year_id', 'concert_id']
+        ordering = ['-year_id', 'concert_id', 'team_id']
 
 
 
