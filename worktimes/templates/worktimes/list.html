@@ -156,7 +156,7 @@
                     {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span><br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                     {% for member in table.nowteam.members.all %}
                         {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                     {% endfor %}
@@ -207,7 +207,7 @@
                     {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span><br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
@@ -258,7 +258,7 @@
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span>
                     <br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
@@ -310,7 +310,7 @@
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span>
                     <br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
@@ -362,7 +362,7 @@
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span>
                     <br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
@@ -414,7 +414,7 @@
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span>
                     <br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
@@ -466,7 +466,7 @@
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span>
                     <br>
-                    <span style="word-break:break-all;">
+                    <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
