@@ -158,7 +158,7 @@
                     <span style="font-weight:bold">멤버</span><br>
                     <span style="word-break:break-word;">
                     {% for member in table.nowteam.members.all %}
-                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                     {% endfor %}
                     </span>
                     <br>
@@ -209,7 +209,7 @@
                     <span style="font-weight:bold">멤버</span><br>
                     <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
-                            {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                         {% endfor %}
                         </span>
                     <br>
@@ -260,7 +260,7 @@
                     <br>
                     <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
-                            {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                         {% endfor %}
                         </span>
                     <br>
@@ -312,7 +312,7 @@
                     <br>
                     <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
-                            {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                         {% endfor %}
                         </span>
                     <br>
@@ -364,7 +364,7 @@
                     <br>
                     <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
-                            {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                         {% endfor %}
                         </span>
                     <br>
@@ -416,7 +416,7 @@
                     <br>
                     <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
-                            {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                         {% endfor %}
                         </span>
                     <br>
@@ -468,7 +468,7 @@
                     <br>
                     <span style="word-break:break-word;">
                         {% for member in table.nowteam.members.all %}
-                            {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
+                        {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%elif forloop.counter == 3 %},<br>{% else %},{% endif %}
                         {% endfor %}
                         </span>
                     <br>
