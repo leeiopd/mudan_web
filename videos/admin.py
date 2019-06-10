@@ -10,6 +10,10 @@ class VideoAdmin(admin.ModelAdmin):
 class TeamAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
+class YearAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+
 
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Team, TeamAdmin)
+admin.site.register(Year, YearAdmin)
