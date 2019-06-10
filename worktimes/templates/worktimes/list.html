@@ -156,11 +156,11 @@
                     {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span><br>
-                    <pre style="word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all;">
+                    <span style="word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all;">
                     {% for member in table.nowteam.members.all %}
                         {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                     {% endfor %}
-                    </pre>
+                    </span>
                     <br>
                     <hr>
                     <span style="font-weight:bold">선곡</span>
@@ -466,11 +466,11 @@
                     {% if table.nowteam %}
                     <span style="font-weight:bold">멤버</span>
                     <br>
-                    <pre style="word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all;">
+                    <span style="word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all;">
                         {% for member in table.nowteam.members.all %}
                             {{ member.mudanNo }}기 {{member.part.short}} {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
                         {% endfor %}
-                        </pre>
+                    </span>
                     <br>
                     <hr>
                     <span style="font-weight:bold">선곡</span>
