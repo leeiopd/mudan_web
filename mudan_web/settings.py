@@ -29,7 +29,7 @@ PWA_APP_DESCRIPTION = "Mudan Web"
 PWA_APP_THEME_COLOR = '#252a2f'
 PWA_APP_BACKGROUND_COLOR = '#F8F8FF'
 PWA_APP_DISPLAY = 'standalone'
-PWA_APP_START_URL = '/notices/'
+PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
     {
       "src": "static/images/icons/icon-72x72.png",
@@ -72,7 +72,7 @@ PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, 'static/js', 'serviceworker.js
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
