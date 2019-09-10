@@ -1,0 +1,21 @@
+{
+  "name": "Mudan",
+  "short_name": "Mudan",
+  "theme_color": "#252a2f",
+  "background_color": "#F8F8FF",
+  "display": "standalone",
+  "start_url": "/notices/",
+  "icons": [
+    {
+      "src": "images/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
