@@ -23,11 +23,6 @@ PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js', 'serviceworker.js'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'noh^dadcvssvsc8$b6x9f)75yn4^mf-@&ovd+7=17gw)%nrdc4'
-<<<<<<< HEAD
-SECRET_KEY = os.environ.get(
-    'DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
-
-=======
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 PWA_APP_NAME = 'Mudan'
 PWA_APP_DESCRIPTION = "Mudan Web"
@@ -74,7 +69,6 @@ PWA_APP_SPLASH_SCREEN = [
 }
 ]
 PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, 'static/js', 'serviceworker.js')
->>>>>>> develop
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
