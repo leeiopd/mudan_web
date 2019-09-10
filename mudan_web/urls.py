@@ -25,4 +25,5 @@ urlpatterns = [
     path('worktimes/', include('worktimes.urls')),
     path('videos/', include('videos.urls')),
     path('members/', include('members.urls')),
+    path('', include('pwa.urls')),
 ]
