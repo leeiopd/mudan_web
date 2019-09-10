@@ -32,23 +32,13 @@ PWA_APP_DISPLAY = 'standalone'
 PWA_APP_START_URL = '/notices/'
 PWA_APP_ICONS = [
     {
-      "src": "{% static '/images/icons/icon-72x72.png' %}",
+      "src": "static/images/icons/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
       "src": "static/images/icons/icon-96x96.png",
       "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "static/images/icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "static/images/icons/icon-128x128.png",
-      "sizes": "144x144",
       "type": "image/png"
     },
     {
@@ -80,7 +70,7 @@ PWA_APP_SPLASH_SCREEN = [
 ]
 PWA_SERVICE_WORKER_PATH = os.path.join (BASE_DIR, 'static/js', 'serviceworker.js')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
