@@ -16,6 +16,8 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+PWA_SERVICE_WORKER_PATH = os.path.join(
+    BASE_DIR, 'static/js', 'serviceworker.js')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -24,12 +26,56 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #SECRET_KEY = 'noh^dadcvssvsc8$b6x9f)75yn4^mf-@&ovd+7=17gw)%nrdc4'
 SECRET_KEY = os.environ.get(
     'DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
-
+PWA_APP_NAME = 'Mudan'
+PWA_APP_DESCRIPTION = "Mudan Web"
+PWA_APP_THEME_COLOR = '#252a2f'
+PWA_APP_BACKGROUND_COLOR = '#F8F8FF'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_START_URL = '/'
+PWA_APP_ICONS = [
+    {
+        "src": "static/images/icons/icon-72x72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+    },
+    {
+        "src": "static/images/icons/icon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+    },
+    {
+        "src": "static/images/icons/icon-152x152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+    },
+    {
+        "src": "static/images/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "static/images/icons/icon-384x384.png",
+        "sizes": "384x384",
+        "type": "image/png"
+    },
+    {
+        "src": "static/images/icons/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/splash-640x1136.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_SERVICE_WORKER_PATH = os.path.join(
+    BASE_DIR, 'static/js', 'serviceworker.js')
 # SECURITY WARNING: don't run with debug turned on in production!
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -47,8 +93,10 @@ INSTALLED_APPS = [
     'notices',
     'members',
     'videos',
+    'pwa',
 ]
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -126,9 +174,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Activate Django-Heroku.
 # 맨 마지막 줄
@@ -146,3 +196,4 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_HSTS_PRELOAD = True
 X_FRAME_OPTIONS = 'DENY'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
