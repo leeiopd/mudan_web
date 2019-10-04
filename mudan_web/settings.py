@@ -192,6 +192,7 @@ STATICFILES_DIRS = (
 django_heroku.settings(locals())
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+<<<<<<< HEAD
 
 # 보안 기능
 CSRF_COOKIE_SECURE = True
@@ -206,3 +207,5 @@ SECURE_BROWSER_XSS_FILTER = True
 SECURE_HSTS_PRELOAD = True
 X_FRAME_OPTIONS = 'DENY'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+=======
+>>>>>>> 1f35bd107441f91ffa2203c108b454b76203a353
