@@ -75,7 +75,7 @@ PWA_SERVICE_WORKER_PATH = os.path.join(
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -194,15 +194,15 @@ django_heroku.settings(locals())
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # 보안 기능
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 
-# True => http 접근 불허, False => http 접근 허가
-SECURE_SSL_REDIRECT = False
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_HSTS_PRELOAD = True
-X_FRAME_OPTIONS = 'DENY'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# # True => http 접근 불허, False => http 접근 허가
+# SECURE_SSL_REDIRECT = False
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_HSTS_PRELOAD = True
+# X_FRAME_OPTIONS = 'DENY'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
