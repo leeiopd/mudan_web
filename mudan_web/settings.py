@@ -73,9 +73,11 @@ PWA_APP_SPLASH_SCREEN = [
 PWA_SERVICE_WORKER_PATH = os.path.join(
     BASE_DIR, 'static/js', 'serviceworker.js')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = []
+
+DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,12 +89,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # crispy forms 기능 추가
     'crispy_forms',
+    # app 목록
     'freetimes',
     'worktimes',
     'notices',
     'members',
     'videos',
+    # pwa 기능 추가
     'pwa',
 ]
 MIDDLEWARE = [
@@ -111,6 +116,7 @@ ROOT_URLCONF = 'mudan_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # base url 을 위한 project app 폴더 template 위치 설정
         'DIRS': [os.path.join(BASE_DIR, 'mudan_web', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -174,6 +180,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+# 정적파일 관련 옵션/ 정적파일 url 접근 등
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
@@ -185,3 +192,17 @@ STATICFILES_DIRS = (
 django_heroku.settings(locals())
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# 보안 기능
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+
+# # True => http 접근 불허, False => http 접근 허가
+# SECURE_SSL_REDIRECT = False
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_HSTS_PRELOAD = True
+# X_FRAME_OPTIONS = 'DENY'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
