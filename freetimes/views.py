@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Table, Freeweek, Freehour
+from members.models import Member
 from notices.models import Onenotice
 
 # Create your views here.
@@ -17,9 +18,10 @@ def list(request):
 
 def detail(request, weekId, hourId):
     onenotice = get_object_or_404(Onenotice, pk=1)
-    table = Table.objects.filter(week_id=weekId, hour_id=hourId)
+    members = Member.objects.filter(
+        member_freetimes__week__id=weekId, member_freetimes__hour__id=hourId)
     week = Freeweek.objects.get(id=weekId)
     hour = Freehour.objects.get(id=hourId)
-    context = {'table': table, 'onenotice': onenotice,
+    context = {'members': members, 'onenotice': onenotice,
                'week': week, 'hour': hour, }
     return render(request, 'freetimes/detail.html', context)

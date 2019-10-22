@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block body %} {% if table %}
+{% extends 'base.html' %} {% block body %} {% if members %}
 <div class="container">
   <div class="card">
     <h5 class="card-header" style="text-align: center !important;">
@@ -6,12 +6,12 @@
     </h5>
     <div class="card-body">
       <p class="card-text">
-        {% for member in table.0.members.all %}
-        {{ member.mudanNo.num }} 기 &nbsp; {{ member.part.short }} &nbsp;
-        {{ member.name }}
+        {% for member in members %}
+            {{ member.mudanNo.num }} 기 &nbsp; {{ member.part.short }} &nbsp;
+            {{ member.name }}
 
         <br />
-        {% endfor %}
+        {% endfor %} 
       </p>
       <div style="text-align: right;">
         <a href="{% url 'freetimes:list' %}" class="btn btn-secondary"

@@ -24,4 +24,4 @@ class Table(models.Model):
         Member, related_name='member_freetimes', blank=True)
 
     def __str__(self):
-        return f'{self.week}, {self.hour}'
+        return f'{self.week}, {self.hour}, {self.members}'
