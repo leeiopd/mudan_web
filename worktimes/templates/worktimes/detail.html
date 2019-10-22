@@ -9,10 +9,12 @@
         {% for member in members %}
         {{ member.mudanNo.num }} 기 &nbsp; {{ member.part.short }} &nbsp;
         {{ member.name }}
+        <br>
         {% endfor %}
         <hr />
         {% for song in songs %}
         {{ song.title }} - {{ song.band }}
+        <br>
         {% endfor %}
       </p>
       <div style="text-align: right;">
