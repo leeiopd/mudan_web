@@ -29,7 +29,7 @@
                                     <span style="font-weight:bold">{{ table1.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table1_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table1_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -54,10 +54,7 @@
                                                 <br>
                                                     {% for nowsong in table1.nowteam.nowsong_set.all %}
                                                         {{ nowsong.title }} - {{ nowsong.band }}
-                                                            {% if forloop.last %}
-                                                            {% else %}
                                                             <br>
-                                                            {% endif %}
                                                     {% endfor %}
                                             </div>
                                             <div class="modal-footer">
@@ -65,7 +62,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -78,7 +75,7 @@
                                     <span style="font-weight:bold">{{ table2.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table2_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table2_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -103,10 +100,7 @@
                                                     <br>
                                                         {% for nowsong in table2.nowteam.nowsong_set.all %}
                                                             {{ nowsong.title }} - {{ nowsong.band }}
-                                                                {% if forloop.last %}
-                                                                {% else %}
                                                                 <br>
-                                                                {% endif %}
                                                         {% endfor %}
                                                 </div>
                                                 <div class="modal-footer">
@@ -114,7 +108,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -127,7 +121,7 @@
                                     <span style="font-weight:bold">{{ table3.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table3_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table3_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -152,10 +146,7 @@
                                                     <br>
                                                         {% for nowsong in table3.nowteam.nowsong_set.all %}
                                                             {{ nowsong.title }} - {{ nowsong.band }}
-                                                                {% if forloop.last %}
-                                                                {% else %}
                                                                 <br>
-                                                                {% endif %}
                                                         {% endfor %}
                                                 </div>
                                                 <div class="modal-footer">
@@ -163,7 +154,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -176,7 +167,7 @@
                                     <span style="font-weight:bold">{{ table4.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table4_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table4_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -201,10 +192,7 @@
                                                     <br>
                                                         {% for nowsong in table4.nowteam.nowsong_set.all %}
                                                             {{ nowsong.title }} - {{ nowsong.band }}
-                                                                {% if forloop.last %}
-                                                                {% else %}
                                                                 <br>
-                                                                {% endif %}
                                                         {% endfor %}
                                                 </div>
                                                 <div class="modal-footer">
@@ -212,7 +200,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -225,7 +213,7 @@
                                     <span style="font-weight:bold">{{ table5.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table5_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table5_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -250,10 +238,7 @@
                                                     <br>
                                                         {% for nowsong in table5.nowteam.nowsong_set.all %}
                                                             {{ nowsong.title }} - {{ nowsong.band }}
-                                                                {% if forloop.last %}
-                                                                {% else %}
                                                                 <br>
-                                                                {% endif %}
                                                         {% endfor %}
                                                 </div>
                                                 <div class="modal-footer">
@@ -261,7 +246,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -274,7 +259,7 @@
                                     <span style="font-weight:bold">{{ table6.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table6_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table6_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -299,10 +284,7 @@
                                                     <br>
                                                         {% for nowsong in table7.nowteam.nowsong_set.all %}
                                                             {{ nowsong.title }} - {{ nowsong.band }}
-                                                                {% if forloop.last %}
-                                                                {% else %}
                                                                 <br>
-                                                                {% endif %}
                                                         {% endfor %}
                                                 </div>
                                                 <div class="modal-footer">
@@ -310,7 +292,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -323,7 +305,7 @@
                                     <span style="font-weight:bold">{{ table7.nowteam.short_name }}</span>
                                 </button>
                                 <!-- modal -->
-                                <div class="modal fade" id="table7_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                {% comment %} <div class="modal fade" id="table7_{{ workhour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -348,10 +330,7 @@
                                                     <br>
                                                         {% for nowsong in table7.nowteam.nowsong_set.all %}
                                                             {{ nowsong.title }} - {{ nowsong.band }}
-                                                                {% if forloop.last %}
-                                                                {% else %}
                                                                 <br>
-                                                                {% endif %}
                                                         {% endfor %}
                                                 </div>
                                                 <div class="modal-footer">
@@ -359,7 +338,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> {% endcomment %}
                             {% endif %}
                         {% endfor %}
                     </div>
