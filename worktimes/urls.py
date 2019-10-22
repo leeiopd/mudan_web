@@ -4,5 +4,6 @@ from . import views
 app_name = 'worktimes'
 
 urlpatterns = [
-    path('', views.list, name='list'),
+    path('list/', views.list, name='list'),
+    path('teamInfo/<int:teamId>/detail/', views.detail, name='detail')
 ]

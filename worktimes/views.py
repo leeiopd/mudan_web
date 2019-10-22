@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from notices.models import Onenotice
-from .models import Workweek, Workhour, Table, Nowteam
+from .models import Workweek, Workhour, Table, Nowteam, Nowsong
 
 # Create your views here.
 
@@ -8,13 +8,18 @@ from .models import Workweek, Workhour, Table, Nowteam
 def list(request):
     onenotice = get_object_or_404(Onenotice, pk=1)
     workhours = Workhour.objects.all()
-    tables1 = Table.objects.filter(week_id=1)
-    tables2 = Table.objects.filter(week_id=2)
-    tables3 = Table.objects.filter(week_id=3)
-    tables4 = Table.objects.filter(week_id=4)
-    tables5 = Table.objects.filter(week_id=5)
-    tables6 = Table.objects.filter(week_id=6)
-    tables7 = Table.objects.filter(week_id=7)
-    context = {'tables1': tables1, 'tables2': tables2, 'tables3': tables3, 'tables4': tables4, 'tables5': tables5, 'tables6': tables6, 'tables7': tables7,
+    tables = Table.objects.all()
+    context = {'tables': tables,
                'workhours': workhours, 'onenotice': onenotice}
     return render(request, 'worktimes/list.html', context)
+
+
+def detail(request, teamId):
+    onenotice = get_object_or_404(Onenotice, pk=1)
+    team = Nowteam.objects.get(pk=teamId)
+    name = team.name
+    members = team.members.all()
+    songs = Nowsong.objects.filter(team_id=teamId)
+    context = {'onenotice': onenotice, 'name': name,
+               'members': members, 'songs': songs}
+    return render(request, 'worktimes/detail.html', context)

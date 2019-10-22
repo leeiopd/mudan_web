@@ -4,6 +4,6 @@ from . import views
 app_name = 'freetimes'
 
 urlpatterns = [
-    path('', views.list, name='list'),
-    path('<int:weekId>/<int:hourId>/', views.detail, name='detail')
+    path('list/', views.list, name='list'),
+    path('<int:weekId>/<int:hourId>/timeInfo/', views.detail, name='detail')
 ]
