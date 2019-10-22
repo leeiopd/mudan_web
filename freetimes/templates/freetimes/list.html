@@ -23,194 +23,21 @@
             </tr>
             {% for freehour in freehours %}
             <tr>
-            <th><div>{{ freehour.clock }}</div></th>
-            <td>
-                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#monday_{{ freehour.clock }}">
-                        <i class="far fa-calendar-check"></i>
-                </button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#Tuesday_{{ freehour.clock }}">
-                    <i class="far fa-calendar-check"></i>
-                </button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#Wednesday_{{ freehour.clock }}">
-                    <i class="far fa-calendar-check"></i>
-                </button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#Thursday_{{ freehour.clock }}">
-                    <i class="far fa-calendar-check"></i>
-                </button>
-            </td>
-            <td>
-                <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#Friday_{{ freehour.clock }}">
-                    <i class="far fa-calendar-check"></i>
-                </button>
-            </td>
+                <th><div>{{ freehour.clock }}</div></th>
+                {% for i in '12345'|make_list %}
+                <td>
+                    <a href="{% url 'freetimes:detail' i freehour.pk %}" style="color: inherit;">
+                    <button type="button" class="btn btn-outline-light">
+                                <i class="far fa-calendar-check"></i>
+                        </button>
+                    </a>
+                </td>
+                {% endfor %}
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
-
-
-<!-- Modal -->
-{% for freehour in freehours %}
-<div class="modal fade" id="monday_{{ freehour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="monday_{{ freehour.clock }}Title">월요일 : {{ freehour.clock }}시 공강 인원</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {% for table in tables %}
-                    {% if table.week.day == '월' and table.hour.clock == freehour.clock %}
-                        {% if table.members %}
-                            {% for member in table.members.all %}
-                                {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
-                            {% endfor %}
-                        {% else %}
-                            공강 인원이 없습니다.
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-{% for freehour in freehours %}
-<div class="modal fade" id="Tuesday_{{ freehour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="Tuesday_{{ freehour.clock }}Title">화요일 : {{ freehour.clock }}시 공강 인원</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {% for table in tables %}
-                    {% if table.week.day == '화' and table.hour.clock == freehour.clock %}
-                        {% if table.members %}
-                            {% for member in table.members.all %}
-                                {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
-                            {% endfor %}
-                        {% else %}
-                            공강 인원이 없습니다.
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-{% for freehour in freehours %}
-<div class="modal fade" id="Wednesday_{{ freehour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="Wednesday_{{ freehour.clock }}Title">수요일 : {{ freehour.clock }}시 공강 인원</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {% for table in tables %}
-                    {% if table.week.day == '수' and table.hour.clock == freehour.clock %}
-                        {% if table.members %}
-                            {% for member in table.members.all %}
-                                {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
-                            {% endfor %}
-                        {% else %}
-                            공강 인원이 없습니다.
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-{% for freehour in freehours %}
-<div class="modal fade" id="Thursday_{{ freehour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="Thursday_{{ freehour.clock }}Title">목요일 : {{ freehour.clock }}시 공강 인원</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {% for table in tables %}
-                    {% if table.week.day == '목' and table.hour.clock == freehour.clock %}
-                        {% if table.members %}
-                            {% for member in table.members.all %}
-                                {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
-                            {% endfor %}
-                        {% else %}
-                            공강 인원이 없습니다.
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
-
-{% for freehour in freehours %}
-<div class="modal fade" id="Friday_{{ freehour.clock }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="Friday_{{ freehour.clock }}Title">금요일 : {{ freehour.clock }}시 공강 인원</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                {% for table in tables %}
-                    {% if table.week.day == '금' and table.hour.clock == freehour.clock %}
-                        {% if table.members %}
-                            {% for member in table.members.all %}
-                                {{ member.mudanNo }}기 {{ member.name }}{% if forloop.last %}{%else%},{% endif %}
-                            {% endfor %}
-                        {% else %}
-                            공강 인원이 없습니다.
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-{% endfor %}
 
 
 {% endblock %}

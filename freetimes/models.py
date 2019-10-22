@@ -20,5 +20,8 @@ class Freehour(models.Model):
 class Table(models.Model):
     week = models.ForeignKey(Freeweek, on_delete=models.CASCADE)
     hour = models.ForeignKey(Freehour, on_delete=models.CASCADE)
-    members = models.ManyToManyField(Member, related_name='member_freetimes', blank=True)
+    members = models.ManyToManyField(
+        Member, related_name='member_freetimes', blank=True)
 
+    def __str__(self):
+        return f'{self.week}, {self.hour}'

@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block body %} {% if table %}
+<div class="container">
+  <div class="card">
+    <h5 class="card-header" style="text-align: center !important;">
+      {{ week.day }}요일 : {{ hour.clock }}시 공강 인원
+    </h5>
+    <div class="card-body">
+      <p class="card-text">
+        {% for member in table.0.members.all %}
+        {{ member.mudanNo.num }} 기 &nbsp; {{ member.part.short }} &nbsp;
+        {{ member.name }}
+
+        <br />
+        {% endfor %}
+      </p>
+      <div style="text-align: right;">
+        <a href="{% url 'freetimes:list' %}" class="btn btn-secondary"
+          >뒤로가기</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="container">
+  <div class="card">
+    <h5 class="card-header" style="text-align: center !important;">
+      {{ week.day }}요일 : {{ hour.clock }}시 공강 인원
+    </h5>
+    <div class="card-body">
+      <p class="card-text">
+        공강 인원이 없습니다.
+      </p>
+      <div style="text-align: right;">
+        <a href="{% url 'freetimes:list' %}" class="btn btn-secondary"
+          >뒤로가기</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}{% endblock %}
