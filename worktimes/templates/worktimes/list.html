@@ -10,124 +10,80 @@
         <tbody>
             <tr class="sticky-relative">
                 <td></td>
-                {% for workweek in workweeks %}
-                <th>{{ workweek.day }}</td>
-                {% endfor %}
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+                <th>일</th>
             </tr>
             {% for workhour in workhours %}
             <tr>
-            <th><div>{{ workhour.clock }}</div></th>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Monday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">
-        {% for table in tables %}
-        {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Tuesday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">
-        {% for table in tables %}
-        {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Wednesday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">{% for table in tables %}
-        {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Thursday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">
-        {% for table in tables %}
-        {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Friday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">
-        {% for table in tables %}
-        {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Saturday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">
-        {% for table in tables %}
-        {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
-            <td class="px-0">
-                <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Sunday_{{ workhour.clock }}"
-                style="background-color:{% for table in tables %}
-                {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
-                {% if table.nowteam %}
-                {{ table.nowteam.color.name }}
-            {% endif %}{% endif %}
-        {% endfor %}; height:2rem;">
-        {% for table in tables %}
-        {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
-        {% if table.nowteam %}
-        <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
-    {% endif %}{% endif %}
-{% endfor %}
-                </button>
-            </td>
+                <th><div>{{ workhour.clock }}</div></th>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Monday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '월' and table.hour.clock == workhour.clock %}
+                                <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Tuesday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '화' and table.hour.clock == workhour.clock %}
+                                    <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Wednesday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '수' and table.hour.clock == workhour.clock %}
+                                    <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Thursday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '목' and table.hour.clock == workhour.clock %}
+                                    <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Friday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '금' and table.hour.clock == workhour.clock %}
+                                    <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Saturday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '토' and table.hour.clock == workhour.clock %}
+                                    <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
+                <td class="px-0">
+                    <button type="button" class="btn btn-outline-light w-100" data-toggle="modal" data-target="#Sunday_{{ workhour.clock }}">
+                        {% for table in tables %}
+                            {% if table.week.day == '일' and table.hour.clock == workhour.clock %}
+                                    <span style="font-weight:bold">{{ table.nowteam.short_name }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </button>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
