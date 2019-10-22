@@ -3,8 +3,9 @@ from .models import Video, Year, Concert, Team
 from notices.models import Onenotice
 # Create your views here.
 
+
 def list(request):
-    onenotice  = get_object_or_404(Onenotice, pk=1)
+    onenotice = get_object_or_404(Onenotice, pk=1)
     years = Year.objects.all()
     concerts = Concert.objects.all()
     teams = Team.objects.all()
@@ -16,40 +17,49 @@ def list(request):
         if search_year == 'all' and search_concert == 'all' and search_team == 'all':
             videos = Video.objects.all()
         if search_year != 'all' and search_concert != 'all' and search_team != 'all':
-            videos = Video.objects.filter(year_id = search_year, concert_id = search_concert, team_id = search_team).order_by('-year')
+            videos = Video.objects.filter(
+                year_id=search_year, concert_id=search_concert, team_id=search_team).order_by('-year')
 
         if search_year != 'all' and search_concert == 'all' and search_team == 'all':
-            videos = Video.objects.filter(year_id = search_year)
+            videos = Video.objects.filter(year_id=search_year)
         if search_year == 'all' and search_concert != 'all' and search_team == 'all':
-            videos = Video.objects.filter(concert_id = search_concert)
+            videos = Video.objects.filter(concert_id=search_concert)
         if search_year == 'all' and search_concert == 'all' and search_team != 'all':
-            videos = Video.objects.filter(team_id = search_team)
+            videos = Video.objects.filter(team_id=search_team)
 
         if search_year != 'all' and search_concert != 'all' and search_team == 'all':
-            videos = Video.objects.filter(year_id = search_year, concert_id = search_concert)
+            videos = Video.objects.filter(
+                year_id=search_year, concert_id=search_concert)
         if search_year == 'all' and search_concert != 'all' and search_team != 'all':
-            videos = Video.objects.filter(concert_id = search_concert, team_id = search_team)
+            videos = Video.objects.filter(
+                concert_id=search_concert, team_id=search_team)
         if search_year != 'all' and search_concert == 'all' and search_team != 'all':
-            videos = Video.objects.filter(team_id = search_team, year_id = search_year)
+            videos = Video.objects.filter(
+                team_id=search_team, year_id=search_year)
 
     else:
-        videos = Video.objects.all()
+        last_year = Year.objects.all().last()
+        videos = Video.objects.filter(year_id=last_year.id)
 
-    context = {'onenotice': onenotice, 'videos':videos, 'teams':teams, 'years':years, 'concerts':concerts}
+    context = {'onenotice': onenotice, 'videos': videos,
+               'teams': teams, 'years': years, 'concerts': concerts}
     return render(request, 'videos/list.html', context)
 
+
 def watch(request, video_pk):
-    onenotice  = get_object_or_404(Onenotice, pk=1)
+    onenotice = get_object_or_404(Onenotice, pk=1)
     video = get_object_or_404(Video, pk=video_pk)
 
-    context = {'onenotice': onenotice, 'video':video}
+    context = {'onenotice': onenotice, 'video': video}
     return render(request, 'videos/watch.html', context)
 
+
 def detail(request, team_pk):
-    onenotice  = get_object_or_404(Onenotice, pk=1)
+    onenotice = get_object_or_404(Onenotice, pk=1)
     team = get_object_or_404(Team, pk=team_pk)
     members = team.team_members.all()
     videos = team.video_set.all().order_by('-year')
 
-    context = {'onenotice': onenotice, 'team':team, 'videos':videos, 'members':members}
+    context = {'onenotice': onenotice, 'team': team,
+               'videos': videos, 'members': members}
     return render(request, 'videos/detail.html', context)

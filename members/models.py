@@ -22,7 +22,7 @@ class UniveNo(models.Model):
     num = models.IntegerField()
 
     def __str__(self):
-            return f'{self.num}'
+        return f'{self.num}'
 
 
 class Major(models.Model):
@@ -52,4 +52,3 @@ class Member(models.Model):
 
     class Meta:
         ordering = ['part_id', 'mudanNo_id']
-
